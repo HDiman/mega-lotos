@@ -1,2 +1,2 @@
-# mega-lotos
-Mega Lotos System for Big Planning
+# lotos
+Lotos System of Planning
