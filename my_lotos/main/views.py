@@ -53,6 +53,7 @@ def edit(request, id):
 
 
 def index(request):
+
     grid_0 = Grid.objects.all()[0]
     grid_1 = Grid.objects.all()[1]
     grid_2 = Grid.objects.all()[2]
@@ -80,7 +81,6 @@ def index(request):
     grid_6.save()
     grid_7.save()
     grid_8.save()
-
 
     data = {
         'grid_0': Grid.objects.all()[0],
