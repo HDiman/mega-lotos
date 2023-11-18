@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Список слов</h2>
+    <table>
+        <thead><th>Id</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th></th></thead>
+        {% for item in grid %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.item_0 }}</td>
+            <td>{{ item.item_1 }}</td>
+            <td>{{ item.item_2 }}</td>
+            <td>{{ item.item_3 }}</td>
+            <td>{{ item.item_4 }}</td>
+            <td>{{ item.item_5 }}</td>
+            <td>{{ item.item_6 }}</td>
+            <td>{{ item.item_7 }}</td>
+            <td>{{ item.item_8 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Главная</a>
+</body>
+</html>
