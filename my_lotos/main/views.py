@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from .models import Grid
 
 
+
+# релокация
+def relocate(request, id):
+    return redirect('home')
+
+
 # изменение базы данных по одной ячейке
 def edit(request, id):
     grid = Grid.objects.get(id=id)
@@ -18,8 +24,6 @@ def edit(request, id):
 
         if id == 1 and len(userform_0) != 0:
             grid.item_0 = userform_0
-        else:
-            pass
         if len(userform_1) != 0:
             grid.item_1 = userform_1
         if len(userform_2) != 0:
@@ -55,7 +59,7 @@ def edit(request, id):
 
 
 def index(request):
-
+    # блок замены листьев основного на центры сетки
     grid_0 = Grid.objects.all()[0]
     grid_1 = Grid.objects.all()[1]
     grid_2 = Grid.objects.all()[2]
@@ -84,6 +88,7 @@ def index(request):
     grid_7.save()
     grid_8.save()
 
+    #  вызов данных с БД
     data = {
         'grid_0': Grid.objects.all()[0],
         'grid_1': Grid.objects.all()[1],
@@ -99,7 +104,7 @@ def index(request):
     return render(request, 'main/index.html', context=data)
 
 
-# список данных в grid
+# страница списка БД
 def list(request):
     grid = Grid.objects.all()
     data = {"grid": grid}
