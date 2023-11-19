@@ -16,8 +16,10 @@ def edit(request, id):
         userform_7 = request.POST.get('item_7')
         userform_8 = request.POST.get('item_8')
 
-        if len(userform_0) != 0:
+        if id == 1 and len(userform_0) != 0:
             grid.item_0 = userform_0
+        else:
+            pass
         if len(userform_1) != 0:
             grid.item_1 = userform_1
         if len(userform_2) != 0:
