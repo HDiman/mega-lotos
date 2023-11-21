@@ -13,12 +13,6 @@ class Grid(models.Model):
     item_7 = models.CharField('Item_7', max_length=100)
     item_8 = models.CharField('Item_8', max_length=100)
 
-    # class Meta:
-    #     db_table = "user"
-    #     app_label = "main"
-    #     managed = True
-    # using = "second_db"
-
-
     def __str__(self):
         return self.item_0
+
