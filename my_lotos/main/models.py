@@ -1,7 +1,16 @@
 from django.db import models
+from mptt.models import MPTTModel, TreeForeignKey
 
 
-# Create your models here.
+# Create your models here
+class Genre(MPTTModel):
+    name = models.CharField(max_length=50, unique=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+
 class Grid(models.Model):
     item_0 = models.CharField('Item_0', max_length=100)
     item_1 = models.CharField('Item_1', max_length=100)
