@@ -106,6 +106,5 @@ def index(request):
 
 # страница списка БД
 def list(request):
-    grid = Grid.objects.all()
-    data = {"grid": grid}
+    data = {"grid": Grid.objects.all()}
     return render(request, 'main/list.html', context=data)
