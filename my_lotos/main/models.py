@@ -3,12 +3,12 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 # Create your models here
-class Genre(MPTTModel):
-    name = models.CharField(max_length=50, unique=True)
-    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+class Category(MPTTModel):
+    title = models.CharField(max_length=250, verbose_name='Название категории')
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, db_index=True, related_name='children', verbose_name='Родительская категория')
 
     class MPTTMeta:
-        order_insertion_by = ['name']
+        order_insertion_by = ['title']
 
 
 class Grid(models.Model):
